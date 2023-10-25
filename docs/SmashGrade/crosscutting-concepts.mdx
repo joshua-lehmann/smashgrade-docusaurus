@@ -2,15 +2,21 @@
 title: Crosscutting Concepts
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Data Fetching
-For Data fetching use a REST API provided by the [Backend](./building-block-view.md).
+For Data fetching use a REST API provided by the [Backend](./building-block-view.md#backend).
 
 ## Frontend Data Fetching
 In the frontend we use a library called [Tanstack Query](https://tanstack.com/query/latest) which simplifies the common data fetching tasks a lot.
 
 ### Example
 
-```ts
+<Tabs>
+<TabItem value="ts" label="TypeScript">
+
+```ts title="Onboarding.tsx"
 async function getCurriculums(): Promise<Curriculum[]> {
     const { data } = await axios.get<CurriculumResponse[]>(`${import.meta.env.VITE_BACKEND_API_URL}/curriculums`); 
     return data.map((curriculum) => ({ value: curriculum.title, label: curriculum.title, year: curriculum.year }));
@@ -30,9 +36,11 @@ if (yearsLoading || curriculumsLoading) {
     }
 ```
 
-1.  Key which is used for caching
+</TabItem>
 
-```js
+<TabItem value="javascript" label="JavaScript">
+
+```js title="Onboarding.jsx"
 async function getCurriculums() {
     const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/curriculums`); 
     return data.map((curriculum) => ({ value: curriculum.title, label: curriculum.title, year: curriculum.year }));
@@ -50,9 +58,18 @@ async function getCurriculums() {
     if (yearsLoading || curriculumsLoading) {
             return <h2>Loading</h2>;
         }
-    ```
-    
-    2.  Key which is used for caching
+```
+
+</TabItem>
+</Tabs>
+
+:::tip
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+
 
 
 
