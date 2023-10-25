@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksmashgrade_docusaurus=self.webpackChunksmashgrade_docusaurus||[]).push([[1327],{22:s=>{s.exports=JSON.parse('{"label":"hola","permalink":"/smashgrade-docusaurus/blog/tags/hola","allTagsPath":"/smashgrade-docusaurus/blog/tags","count":1}')}}]);
